@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Wardrobe design tokens — docs/style-guide.md (workspace root).
+   These are the only colors allowed anywhere on the site. */
+@theme {
+  --color-paper: #faf6f0;
+  --color-surface: #ffffff;
+  --color-ink: #1b1815;
+  --color-ink-soft: #5c554a;
+  --color-ink-mute: #8a8072;
+  --color-line: #ede5d8;
+  --color-line-strong: #e3dacc;
+  --color-clay: #c6613f;
+  --color-clay-deep: #9e4a2e;
+  --color-clay-wash: #f7e9e2;
+  --color-sage: #7a8b6f;
+  --color-sage-wash: #eef1ea;
+  --color-amber: #b98a2e;
+  --color-amber-wash: #f7efdd;
+  --color-rust: #a33b2a;
+  --color-rust-wash: #f8e8e4;
+  --color-on-clay: #fff6f0;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-manrope);
+
+  --radius-card: 14px;
+  --radius-sheet: 20px;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
