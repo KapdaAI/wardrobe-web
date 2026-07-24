@@ -2,37 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy — Wardrobe",
+  title: "Privacy — Fitted",
   description:
-    "How Wardrobe collects, processes, and deletes your data under India's DPDP Act 2023.",
+    "How Fitted collects, processes, and deletes your data under India's DPDP Act 2023.",
 };
 
 export default function PrivacyPage() {
   return (
     <main className="mx-auto max-w-3xl flex-1 px-5 py-16">
-      <Link href="/" className="text-clay-deep text-sm hover:underline">
-        ← Wardrobe
+      <Link href="/" className="text-accent text-sm hover:underline">
+        ← Fitted
       </Link>
-      <h1 className="font-display text-ink mt-6 text-4xl">Privacy</h1>
-      <p className="text-ink-mute mt-3 text-sm">
-        Last updated: 19 July 2026 · Applies to the Wardrobe beta app and this
+      <h1 className="font-bold text-ink mt-6 text-4xl">Privacy</h1>
+      <p className="text-muted-dim mt-3 text-sm">
+        Last updated: 19 July 2026 · Applies to the Fitted beta app and this
         site.
       </p>
-      <p className="text-ink-soft mt-6 text-[15px] leading-relaxed">
-        Wardrobe is built for India. We follow the Digital Personal Data
+      <p className="text-muted mt-6 text-[15px] leading-relaxed">
+        Fitted is built for India. We follow the Digital Personal Data
         Protection Act, 2023 (DPDP): clear purpose, informed consent, and a real
         right to erasure. This page is the full policy — not a teaser.
       </p>
 
-      <div className="text-ink-soft mt-10 space-y-10 text-[15px] leading-relaxed">
+      <div className="text-muted mt-10 space-y-10 text-[15px] leading-relaxed">
         <section>
-          <h2 className="font-display text-ink text-xl">Who we are</h2>
+          <h2 className="font-bold text-ink text-xl">Who we are</h2>
           <p className="mt-2">
-            Wardrobe is a digital wardrobe and outfit planner operated by the
-            Wardrobe team. For privacy questions or DPDP requests, email{" "}
+            Fitted is a digital wardrobe and outfit planner operated by the
+            Fitted team. For privacy questions or DPDP requests, email{" "}
             <a
               href="mailto:harshkeshari100@gmail.com"
-              className="text-clay-deep hover:underline"
+              className="text-accent hover:underline"
             >
               harshkeshari100@gmail.com
             </a>
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">What we collect</h2>
+          <h2 className="font-bold text-ink text-xl">What we collect</h2>
           <ul className="mt-2 list-disc space-y-2 pl-5">
             <li>
               <span className="text-ink">Account identity</span> — email, name,
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
               ghost-mannequin processing succeeds.
             </li>
             <li>
-              <span className="text-ink">Wardrobe data</span> — items, tags,
+              <span className="text-ink">Fitted data</span> — items, tags,
               outfits, and calendar plans you create.
             </li>
             <li>
@@ -69,9 +69,9 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Why we collect it</h2>
+          <h2 className="font-bold text-ink text-xl">Why we collect it</h2>
           <p className="mt-2">
-            Purpose is limited to running Wardrobe for you: digitizing clothes
+            Purpose is limited to running Fitted for you: digitizing clothes
             you already own, building and planning outfits, and improving
             capture speed. We do not sell personal data. We do not use your
             photos to train public AI models.
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Consent</h2>
+          <h2 className="font-bold text-ink text-xl">Consent</h2>
           <p className="mt-2">
             Signing in with Google creates your account. Camera and photo-library
             access are requested only when you add clothes, with a plain-language
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Your photos</h2>
+          <h2 className="font-bold text-ink text-xl">Your photos</h2>
           <p className="mt-2">
             Clothing photos may incidentally show faces, rooms, or other people.
             We treat every user photo as sensitive personal data. Photos are
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">
+          <h2 className="font-bold text-ink text-xl">
             Third-party processing
           </h2>
           <p className="mt-2">
@@ -129,7 +129,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">How long we keep data</h2>
+          <h2 className="font-bold text-ink text-xl">How long we keep data</h2>
           <p className="mt-2">
             We keep your account and wardrobe data while your account is active.
             Soft-deleted items remain inaccessible in the product and are purged
@@ -139,7 +139,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Your rights (DPDP)</h2>
+          <h2 className="font-bold text-ink text-xl">Your rights (DPDP)</h2>
           <p className="mt-2">You can:</p>
           <ul className="mt-2 list-disc space-y-2 pl-5">
             <li>Access the profile and wardrobe data in the app</li>
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Account deletion</h2>
+          <h2 className="font-bold text-ink text-xl">Account deletion</h2>
           <p className="mt-2">
             Deleting your account from the app soft-deletes your profile, items,
             outfits, calendar entries, and related records, and starts wiping
@@ -174,7 +174,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Security</h2>
+          <h2 className="font-bold text-ink text-xl">Security</h2>
           <p className="mt-2">
             Access to the API requires our session token after Google Sign-In.
             Storage buckets are private. We do not put clothing photos on public
@@ -185,15 +185,15 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Children</h2>
+          <h2 className="font-bold text-ink text-xl">Children</h2>
           <p className="mt-2">
-            Wardrobe is not directed at children under 18. If you believe a
+            Fitted is not directed at children under 18. If you believe a
             minor has created an account, contact us and we will delete it.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Changes</h2>
+          <h2 className="font-bold text-ink text-xl">Changes</h2>
           <p className="mt-2">
             If we change how we process personal data in a material way, we will
             update this page and the &quot;Last updated&quot; date. For
@@ -203,12 +203,12 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-ink text-xl">Contact</h2>
+          <h2 className="font-bold text-ink text-xl">Contact</h2>
           <p className="mt-2">
             Privacy and erasure:{" "}
             <a
               href="mailto:harshkeshari100@gmail.com"
-              className="text-clay-deep hover:underline"
+              className="text-accent hover:underline"
             >
               harshkeshari100@gmail.com
             </a>

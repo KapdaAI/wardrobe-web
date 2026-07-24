@@ -1,35 +1,130 @@
 @import "tailwindcss";
 
-/* Wardrobe design tokens — docs/style-guide.md (workspace root).
-   These are the only colors allowed anywhere on the site. */
+/* Fitted — marketing site "forest" tokens (dark only).
+   These variables are the single source of truth for color on this site;
+   components reference them via Tailwind theme utilities or var() — no raw hex. */
 @theme {
-  --color-paper: #faf6f0;
-  --color-surface: #ffffff;
-  --color-ink: #1b1815;
-  --color-ink-soft: #5c554a;
-  --color-ink-mute: #8a8072;
-  --color-line: #ede5d8;
-  --color-line-strong: #e3dacc;
-  --color-clay: #c6613f;
-  --color-clay-deep: #9e4a2e;
-  --color-clay-wash: #f7e9e2;
-  --color-sage: #7a8b6f;
-  --color-sage-wash: #eef1ea;
-  --color-amber: #b98a2e;
-  --color-amber-wash: #f7efdd;
-  --color-rust: #a33b2a;
-  --color-rust-wash: #f8e8e4;
-  --color-on-clay: #fff6f0;
+  /* Solid surfaces */
+  --color-bg: #0c1712; /* page background */
+  --color-bg-deep: #0a130e; /* alternating band */
+  --color-panel: #122019; /* solid card (phone nav, friend card) */
+  --color-photo: #151b19; /* garment image backdrop */
+  --color-photo-deep: #101b14;
 
-  --font-display: var(--font-fraunces);
-  --font-body: var(--font-manrope);
+  /* Text ramp */
+  --color-ink: #eaf2ec; /* primary text */
+  --color-muted: #9db3a6; /* body copy */
+  --color-muted-dim: #6e8578; /* labels, meta */
+  --color-muted-faint: #455e50; /* footer fine print */
 
-  --radius-card: 14px;
-  --radius-sheet: 20px;
+  /* Accent */
+  --color-accent: #9fe0bc; /* mint — CTAs, active links, highlights */
+  --color-on-accent: #0c1712; /* text on accent */
+  --color-warn: #e8956d; /* laundry / destructive */
+
+  /* Accent-tinted surfaces & hairlines */
+  --color-surface: rgba(159, 224, 188, 0.05);
+  --color-surface-soft: rgba(159, 224, 188, 0.04);
+  --color-line: rgba(159, 224, 188, 0.12);
+  --color-line-soft: rgba(159, 224, 188, 0.14);
+  --color-line-md: rgba(159, 224, 188, 0.2);
+  --color-line-strong: rgba(159, 224, 188, 0.28);
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-serif: var(--font-instrument), serif;
+}
+
+/* Non-color design values (gradients, glows, decor tints, keyframes). */
+:root {
+  --grad-hero: linear-gradient(165deg, #12241b 0%, #0c1712 58%, #0a130e 100%);
+  --grad-friends: linear-gradient(180deg, #0c1712 0%, #12241b 100%);
+  --grad-closing: linear-gradient(170deg, #12241b 0%, #0c1712 70%);
+  --grad-waitlist: linear-gradient(
+    170deg,
+    rgba(159, 224, 188, 0.12),
+    rgba(159, 224, 188, 0.03)
+  );
+  --grad-snapshot: linear-gradient(150deg, #2a2622, #191713);
+  --nav-bg: rgba(12, 23, 18, 0.82);
+  --scrim: rgba(0, 0, 0, 0.5);
+  --field-bg: rgba(12, 23, 18, 0.6);
+  --glow-radial: radial-gradient(
+    circle,
+    rgba(159, 224, 188, 0.14) 0%,
+    rgba(159, 224, 188, 0) 68%
+  );
+  --glow-radial-strong: radial-gradient(
+    circle,
+    rgba(159, 224, 188, 0.16) 0%,
+    rgba(159, 224, 188, 0) 70%
+  );
+  --glow-cta: 0 0 34px rgba(159, 224, 188, 0.28);
+  --glow-cta-strong: 0 0 40px rgba(159, 224, 188, 0.3);
+  --glow-fab: 0 0 24px rgba(159, 224, 188, 0.35);
+  --glow-cutout: 0 0 40px rgba(159, 224, 188, 0.12);
+  --shadow-phone: 0 40px 90px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 30px 60px rgba(0, 0, 0, 0.4);
+  --shadow-nav: 0 12px 30px rgba(0, 0, 0, 0.45);
+
+  /* Decorative one-off tints (avatar stack, swatches, dots) */
+  --av-1: #1b3226;
+  --av-2: #24382c;
+  --av-3: #2c4436;
+  --sw-olive: #4a5236;
+  --sw-sand: #d9c6a5;
+  --sw-blue: #3e5266;
+  --sw-rust: #4a2c28;
+  --dot-charcoal: #1e1d1b;
+}
+
+/* Hero garment cards drift continuously; paused under reduced motion. */
+@keyframes fdrift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-1.5deg);
+  }
+}
+@keyframes fdrift2 {
+  0%,
+  100% {
+    transform: translateY(0) rotate(4deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+.drift-a {
+  animation: fdrift 7s ease-in-out infinite;
+}
+.drift-b {
+  animation: fdrift2 8.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift-a,
+  .drift-b {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-bg);
   color: var(--color-ink);
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
 }

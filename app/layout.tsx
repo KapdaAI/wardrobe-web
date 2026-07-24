@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Archivo, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: "500",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Wardrobe — your closet, digitized",
+  title: "Fitted — wear what you already own",
   description:
-    "Build outfits from clothes you already own and plan them on a calendar. Add clothes in seconds, mix and match, decide once a week.",
+    "Snap your closet once. AI cuts out every piece, names its colors, and tags it — then plan your week and let friends style you. Join the waitlist.",
 };
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${manrope.variable} h-full antialiased`}
+      className={`${archivo.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
